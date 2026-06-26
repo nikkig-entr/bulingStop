@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Практичний український сайт про спокійну, безпечну і впевнену реакцію на образи, булінг, токсичні коментарі та провокації." />
+  <title>Як реагувати на образи</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти до змісту</a>
+  <div class="read-progress" aria-hidden="true">
+    <span id="readProgressBar"></span>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="#hero" aria-label="На головний екран">
+        <span class="brand-mark" aria-hidden="true">З</span>
+        <span class="brand-text">
+          <span>Захисти слово</span>
+          <small>спокійна реакція на образи</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Відкрити меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Основна навігація">
+        <a href="#test">Тест</a>
+        <a href="#phrases">Фрази</a>
+        <a href="#calm">Заспокоїтись</a>
+        <a href="#checklist">Чекліст</a>
+        <a href="#help">Допомога</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="ghost-button compact" id="quickAdviceButton" type="button">Швидка порада</button>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Перемкнути тему" aria-pressed="false">
+          <span class="theme-toggle-track" aria-hidden="true">
+            <span class="theme-toggle-thumb"></span>
+          </span>
+          <span class="theme-toggle-text">Тема</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="hero">
+      <div class="hero-overlay"></div>
+      <div class="section-inner hero-inner">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Практичний навігатор без агресії</p>
+          <h1>Як реагувати на образи і не втратити себе в конфлікті</h1>
+          <p class="hero-lead">
+            Спокійні фрази, план на перші 5 хвилин, дихальна вправа, чекліст доказів і персональні поради для школи, онлайну, друзів та сім’ї.
+          </p>
+          <div class="hero-actions" aria-label="Головні дії">
+            <a class="primary-button" href="#test">Розібрати ситуацію</a>
+            <a class="secondary-button" href="#calm">Заспокоїтись зараз</a>
+            <button class="text-button" id="openTipFromHero" type="button">Порада дня</button>
+          </div>
+          <div class="hero-safety-note">
+            <strong>Важливо:</strong>
+            якщо є загроза безпеці, переслідування, шантаж або фізична небезпека, звернися до дорослого, адміністрації, модераторів або екстрених служб.
+          </div>
+        </div>
+
+        <div class="hero-dashboard reveal" aria-label="Короткі індикатори сайту">
+          <div class="stat-grid" id="heroStats"></div>
+          <div class="calm-meter" aria-label="Міні-нагадування">
+            <span>Пауза перед відповіддю</span>
+            <div class="meter-track">
+              <span class="meter-fill"></span>
+            </div>
+            <small>Одна спокійна межа часто сильніша за десять різких відповідей.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section intro-band" aria-label="Коротка рамка безпеки">
+      <div class="section-inner intro-grid">
+        <article class="info-tile reveal">
+          <span class="tile-number">01</span>
+          <h2>Спершу безпека</h2>
+          <p>Красива відповідь не важливіша за те, щоб відійти, покликати дорослого або зберегти докази.</p>
+        </article>
+        <article class="info-tile reveal">
+          <span class="tile-number">02</span>
+          <h2>Потім межа</h2>
+          <p>Фраза має бути короткою: що не окей, що ти робиш далі, де твоя межа.</p>
+        </article>
+        <article class="info-tile reveal">
+          <span class="tile-number">03</span>
+          <h2>Далі підтримка</h2>
+          <p>Повторювані образи, булінг і токсичне переслідування потребують людей поруч.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section test-section" id="test">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Інтерактивний тест</p>
+          <h2>Що сталося?</h2>
+          <p>
+            Обери найближчу ситуацію. Сайт покаже персональні поради, фрази й безпечні перші кроки.
+          </p>
+        </div>
+
+        <div class="test-layout">
+          <div class="situation-options reveal" id="situationOptions" role="list"></div>
+          <article class="result-panel reveal" id="situationResult" aria-live="polite">
+            <p class="eyebrow">Результат</p>
+            <h3>Обери варіант ліворуч</h3>
+            <p>Тут з’явиться персональний план: що сказати, чого уникати, кого залучити і як не розпалити конфлікт.</p>
+            <div class="empty-state-line"></div>
+            <div class="empty-state-line short"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section phrase-section" id="phrases">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Готові відповіді</p>
+          <h2>Що сказати у відповідь</h2>
+          <p>
+            Обери стиль відповіді або згенеруй фразу під ситуацію. Усі варіанти побудовані без приниження у відповідь.
+          </p>
+        </div>
+
+        <div class="phrase-tools reveal">
+          <div class="tabs" id="phraseTabs" role="tablist" aria-label="Категорії відповідей"></div>
+          <div class="phrase-generator">
+            <label for="phraseContext">Контекст</label>
+            <select id="phraseContext">
+              <option value="any">Будь-який</option>
+              <option value="school">Школа</option>
+              <option value="online">Онлайн</option>
+              <option value="friends">Друзі</option>
+              <option value="family">Сім’я</option>
+            </select>
+            <button class="primary-button small" id="generatePhraseButton" type="button">Згенерувати фразу</button>
+          </div>
+        </div>
+
+        <div class="generated-phrase reveal" id="generatedPhrase" aria-live="polite">
+          <span>Фраза з’явиться тут</span>
+        </div>
+
+        <div class="phrase-grid reveal" id="phraseGrid"></div>
+      </div>
+    </section>
+
+    <section class="section warning-section" id="not-to-do">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Безпечні межі</p>
+          <h2>Чого не варто робити</h2>
+          <p>
+            Не всі інтуїтивні реакції допомагають. Деякі дають коротке полегшення, але роблять ситуацію небезпечнішою або заплутанішою.
+          </p>
+        </div>
+        <div class="warning-grid reveal" id="notToDoGrid"></div>
+      </div>
+    </section>
+
+    <section class="section plan-section" id="five-minutes">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Перші хвилини</p>
+          <h2>План дій за 5 хвилин</h2>
+          <p>
+            Коли емоції різкі, мозку потрібна проста послідовність. Цей план допомагає не зірватися і не залишитися без підтримки.
+          </p>
+        </div>
+
+        <div class="plan-layout">
+          <div class="timeline reveal" id="fiveMinuteTimeline"></div>
+          <article class="step-coach reveal">
+            <p class="eyebrow">Міні-тренер</p>
+            <h3 id="coachTitle">Крок 1</h3>
+            <p id="coachBody">Почни з паузи і видиху.</p>
+            <div class="coach-progress">
+              <span id="coachProgressBar"></span>
+            </div>
+            <div class="coach-actions">
+              <button class="secondary-button small" id="prevStepButton" type="button">Назад</button>
+              <button class="primary-button small" id="nextStepButton" type="button">Далі</button>
+              <button class="ghost-button small" id="resetStepButton" type="button">Спочатку</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section calm-section" id="calm">
+      <div class="section-inner calm-layout">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Стабілізація</p>
+          <h2>Як заспокоїтись</h2>
+          <p>
+            Дихальна вправа не вирішує конфлікт за тебе, але повертає тілу відчуття керма. Після цього легше обрати безпечну дію.
+          </p>
+          <ul class="soft-list">
+            <li>Вдих — повільно через ніс.</li>
+            <li>Пауза — без напруги.</li>
+            <li>Видих — довше, ніж вдих.</li>
+            <li>Після циклу назви один наступний крок.</li>
+          </ul>
+        </div>
+
+        <div class="breathing-card reveal">
+          <div class="breath-circle" id="breathCircle">
+            <span id="breathPhase">Готово</span>
+            <strong id="breathTimer">60</strong>
+          </div>
+          <div class="breath-controls">
+            <button class="primary-button small" id="startBreathingButton" type="button">Почати 60 с</button>
+            <button class="secondary-button small" id="pauseBreathingButton" type="button">Пауза</button>
+            <button class="ghost-button small" id="resetBreathingButton" type="button">Скинути</button>
+          </div>
+          <div class="breath-progress" aria-hidden="true">
+            <span id="breathProgressBar"></span>
+          </div>
+          <p id="breathHint">Коли натиснеш старт, коло підкаже темп.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section support-section" id="support">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Картка підтримки</p>
+          <h2>Що ти відчуваєш зараз?</h2>
+          <p>
+            Емоція не робить тебе слабким або слабкою. Вона підказує, яка підтримка потрібна саме зараз.
+          </p>
+        </div>
+        <div class="emotion-layout">
+          <div class="emotion-grid reveal" id="emotionGrid"></div>
+          <article class="emotion-result reveal" id="emotionResult" aria-live="polite">
+            <p class="eyebrow">Підтримка</p>
+            <h3>Обери стан</h3>
+            <p>Тут з’являться слова підтримки й маленькі дії, які можна зробити безпечно.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section checklist-section" id="checklist">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Збереження стану</p>
+          <h2>Чекліст дій</h2>
+          <p>
+            Позначай виконане. Стан зберігається в цьому браузері, щоб ти міг/могла повернутися до плану.
+          </p>
+        </div>
+
+        <div class="checklist-panel reveal">
+          <div class="checklist-top">
+            <div>
+              <span class="progress-label">Виконано</span>
+              <strong id="checklistProgressText">0%</strong>
+            </div>
+            <button class="ghost-button small" id="resetChecklistButton" type="button">Очистити</button>
+          </div>
+          <div class="progress-track">
+            <span id="checklistProgressBar"></span>
+          </div>
+          <div class="checklist" id="checklistItems"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section help-section" id="help">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Коли потрібні інші люди</p>
+          <h2>Коли потрібно просити допомоги</h2>
+          <p>
+            Є ситуації, де “впоратися самому/самій” не має бути метою. Мета — зупинити шкоду і повернути безпеку.
+          </p>
+        </div>
+        <div class="help-grid reveal" id="helpGrid"></div>
+        <div class="safety-callout reveal">
+          <h3>Якщо є загроза просто зараз</h3>
+          <p>
+            Відійди в безпечне місце, звернися до дорослого, адміністрації, охорони, модераторів або екстрених служб, доступних у твоїй країні. Не домовляйся з агресором наодинці.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section library-section" id="library">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Практична база</p>
+          <h2>Фільтр ситуацій і карток</h2>
+          <p>
+            Тут зібрані різні сценарії: школа, онлайн, друзі, сім’я, публічні місця, секції та робота. Обери фільтр або знайди слово.
+          </p>
+        </div>
+
+        <div class="library-controls reveal">
+          <div class="filter-group" id="environmentFilters" aria-label="Фільтр за місцем"></div>
+          <label class="search-label" for="situationSearch">
+            <span>Пошук</span>
+            <input id="situationSearch" type="search" placeholder="Наприклад: чат, зовнішність, погрози" />
+          </label>
+          <label class="select-label" for="intensityFilter">
+            <span>Рівень</span>
+            <select id="intensityFilter"></select>
+          </label>
+        </div>
+
+        <div class="library-summary reveal">
+          <strong id="libraryCount">0</strong>
+          <span>карток знайдено</span>
+        </div>
+        <div class="situation-library reveal" id="situationLibrary"></div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Питання</p>
+          <h2>FAQ</h2>
+          <p>
+            Короткі відповіді на ситуації, які часто плутають: жарт чи булінг, мовчати чи відповідати, коли блокувати, як говорити з дорослими.
+          </p>
+        </div>
+        <div class="faq-list reveal" id="faqList"></div>
+      </div>
+    </section>
+
+    <section class="section final-section" id="final">
+      <div class="section-inner final-inner reveal">
+        <p class="eyebrow">На завершення</p>
+        <h2>Ти не маєш ставати жорстким/жорсткою, щоб захистити себе</h2>
+        <p id="randomQuote">Межа може звучати тихо й усе одно бути справжньою.</p>
+        <div class="final-actions">
+          <button class="primary-button" id="newQuoteButton" type="button">Інша підтримуюча думка</button>
+          <a class="secondary-button" href="#test">Повернутися до тесту</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalBody">
+      <button class="modal-close" id="modalCloseButton" type="button" aria-label="Закрити">×</button>
+      <p class="eyebrow" id="modalKicker">Порада</p>
+      <h2 id="modalTitle">Порада дня</h2>
+      <p id="modalBody">Пауза перед відповіддю часто зберігає більше сили, ніж різка фраза.</p>
+      <div class="modal-actions">
+        <button class="primary-button small" id="modalAnotherButton" type="button">Ще одна</button>
+        <button class="secondary-button small" id="modalOkButton" type="button">Зрозуміло</button>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
